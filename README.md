@@ -3,7 +3,7 @@
 
 # Banking Application
 
-This is a simple banking application with a frontend and backend that allows users to add bank accounts, view account details, and transfer money between accounts. It also features a sidebar navigation, form validation, and real-time data updates.
+This is a simple banking application with a frontend and backend that allows users to add bank accounts, view, edit  and delete account details, and transfer money between accounts. It also features a sidebar navigation, form validation, and real-time data updates.
 
 ## Table of Contents
 - [Setup and Installation](#setup-and-installation)
