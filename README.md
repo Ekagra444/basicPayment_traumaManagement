@@ -1,5 +1,4 @@
 
-
 ---
 
 # Banking Application
@@ -14,7 +13,7 @@ This is a simple banking application with a frontend and backend that allows use
 - [Features](#features)
 - [Backend Transactions](#backend-transactions)
 - [Running the Application](#running-the-application)
-
+-[UI for reference).(#UI-for-reference)
 ---
 
 ## Setup and Installation
@@ -92,4 +91,5 @@ The backend implements proper MySQL transactions to ensure data consistency duri
    ```
 
 The application should now be running. You can access it in your browser at [http://localhost:3000](http://localhost:3000).
-
+### UI for reference 
+![image](https://github.com/user-attachments/assets/02bd70de-c14d-4069-9c24-d7582b7cf482)
