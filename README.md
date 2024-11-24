@@ -13,7 +13,7 @@ This is a simple banking application with a frontend and backend that allows use
 - [Features](#features)
 - [Backend Transactions](#backend-transactions)
 - [Running the Application](#running-the-application)
--[UI for reference).(#UI-for-reference)
+
 ---
 
 ## Setup and Installation
