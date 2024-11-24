@@ -1,4 +1,4 @@
-Here's the updated `README.md` with the configuration section removed:
+
 
 ---
 
