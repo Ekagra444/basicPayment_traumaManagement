@@ -116,6 +116,57 @@ app.post('/api/transfer', async (req, res) => {
     }
   });
 
+  // In your Express backend routes file
+app.delete('/api/accounts/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      
+      // Assuming you're using a SQL database
+      const result = await pool.query(
+        'DELETE FROM bank_accounts WHERE id = ? ',
+        [id]
+      );
+      
+      if (result.rowCount === 0) {
+        return res.status(404).json({ error: 'Account not found' });
+      }
+      
+      res.json({ message: 'Account deleted successfully' });
+    } catch (error) {
+      console.error('Error deleting account:', error);
+      res.status(500).json({ error: 'Failed to delete account' });
+    }
+  });
+
+  // edit functionality through put request 
+app.put('/api/accounts/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const balance = (req.body.balance);
+
+      
+      // Validate the balance
+      if (typeof balance !== 'number' || balance < 0) {
+        return res.status(400).json({ error: 'Invalid balance amount' });
+      }
+  
+      // Assuming you're using a SQL database
+      const result = await pool.query(
+        'UPDATE bank_accounts SET balance = ? WHERE id = ? ',
+        [balance, id]
+      );
+      
+      if (result.affectedRows === 0) {
+        return res.status(404).json({ error: 'Account not found' });
+      }
+      
+      return res.status(200).json(result[0]);
+    } catch (error) {
+      console.error('Error updating account:', error);
+      res.status(500).json({ error: 'Failed to update account' });
+    }
+  });
+
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
