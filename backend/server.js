@@ -116,12 +116,12 @@ app.post('/api/transfer', async (req, res) => {
     }
   });
 
-  // In your Express backend routes file
+  // handling delete functionality of accounts
 app.delete('/api/accounts/:id', async (req, res) => {
     try {
       const { id } = req.params;
       
-      // Assuming you're using a SQL database
+    
       const result = await pool.query(
         'DELETE FROM bank_accounts WHERE id = ? ',
         [id]
@@ -145,12 +145,11 @@ app.put('/api/accounts/:id', async (req, res) => {
       const balance = (req.body.balance);
 
       
-      // Validate the balance
+      // Validaing the balance
       if (typeof balance !== 'number' || balance < 0) {
         return res.status(400).json({ error: 'Invalid balance amount' });
       }
   
-      // Assuming you're using a SQL database
       const result = await pool.query(
         'UPDATE bank_accounts SET balance = ? WHERE id = ? ',
         [balance, id]
