@@ -46,7 +46,7 @@ const AddAccount = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/accounts', {
+      const response = await fetch('https://basicpayment-traumamanagement.onrender.com/api/accounts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ accountHolder, balance: parseFloat(balance) }),
@@ -120,7 +120,7 @@ const ViewAccounts = () => {
 
   const fetchAccounts = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/accounts');
+      const response = await fetch('https://basicpayment-traumamanagement.onrender.com/api/accounts');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -150,7 +150,7 @@ const ViewAccounts = () => {
         throw new Error('Please enter a valid amount');
       }
 
-      const response = await fetch(`http://localhost:5000/api/accounts/${editingAccount.id}`, {
+      const response = await fetch(`https://basicpayment-traumamanagement.onrender.com/api/accounts/${editingAccount.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -186,7 +186,7 @@ const ViewAccounts = () => {
 
   const handleDeleteAccount = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/accounts/${accountToDelete.id}`, {
+      const response = await fetch(`https://basicpayment-traumamanagement.onrender.com/api/accounts/${accountToDelete.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -337,7 +337,7 @@ const TransferMoney = () => {
 
   const fetchAccounts = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/accounts');
+      const response = await fetch('https://basicpayment-traumamanagement.onrender.com/api/accounts');
       const data = await response.json();
       setAccounts(data);
     } catch (error) {
@@ -348,7 +348,7 @@ const TransferMoney = () => {
   const handleTransfer = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/transfer', {
+      const response = await fetch('https://basicpayment-traumamanagement.onrender.com/api/transfer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
