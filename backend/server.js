@@ -9,10 +9,11 @@ app.use(express.json());
 require('dotenv').config();
 // MySQL connection
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
+  host: 'discordc-ekagra444-4e0e.d.aivencloud.com',
+  port: 25186,
+  user: 'avnadmin',
   password: process.env.DATABASE_PASSWORD,
-  database: 'banking_db',
+  database: 'defaultdb',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
